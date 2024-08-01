@@ -1,17 +1,15 @@
-const btn = document.getElementById("btn");
-btn.addEventListener('click', async function(){ 
-	const text = document.getElementById("text").value; // string
-	const delay = parseInt(document.getElementById("delay").value); // string
-	
-	// wait
+const btn = document.getElementById("btn")
+ 
+btn.addEventListener('click', async () => {
+	const text = document.getElementById("text").value;
+	const delay = parseInt(document.getElementById("delay").value);
+	// const delay = +(document.getElementById("delay").value);
 	await delayFunction(delay);
-	// display the output
 	document.getElementById("output").innerText = text;
-	
 })
 
-function delayFunction(delay){
-	return new Promise(resolve => {
-		setTimeout(resolve, delay);
+function  delayFunction(delay) {
+	return new Promise((resolve) => {
+		setTimeout(resolve, delay)
 	})
 }
